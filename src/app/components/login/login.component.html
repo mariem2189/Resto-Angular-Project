@@ -1,0 +1,42 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Connect to your account</p>
+                    <h2>Login</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #loginForm="ngForm" (ngSubmit)="login()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" [(ngModel)]="user.email"
+                                    [ngModelOptions]="{standalone:true}" #email="ngModel" placeholder="Email *"
+                                    [ngClass]="{ 'is-invalid': loginForm.submitted && email.invalid }" email required>
+                            </div>
+                            <div *ngIf="loginForm.submitted && email.invalid" class="invalid- feedback">
+                                <div *ngIf="email.errors.required" style="color: orange;">Email is required</div>
+                                <div *ngIf="email.errors.email" style="color: orange;">Email format is invalid </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" [(ngModel)]="user.pwd"
+                                    [ngModelOptions]="{standalone:true}" id="inputPassword4" placeholder="Password *">
+                            </div>
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button type="submit" class="btn_4">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->

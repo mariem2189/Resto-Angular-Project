@@ -1,0 +1,39 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <h2>Weather</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #weatherForm="ngForm" (ngSubmit)="search()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="weather.country"
+                                    [ngModelOptions]="{standalone:true}" placeholder="Insert country *">
+                            </div>
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button type="submit" class="btn_4">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="color: orangered;">
+        {{result?.temp}}
+        {{result?.humidity}}
+        {{result?.pressure}}
+    </div>
+
+</section>
+<!--::regervation_part end::-->

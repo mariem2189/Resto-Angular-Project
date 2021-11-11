@@ -1,0 +1,55 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Create your account</p>
+                    <h2>Signup</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="signupForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="fName" id="inputEmail4"
+                                    placeholder="First Name *">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="lName" id="inputPassword4"
+                                    placeholder="Last Name *">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" formControlName="email" id="inputEmail4"
+                                    placeholder="Email *">
+                            </div>
+                            <div *ngIf="signupForm.controls['email'].invalid && 
+                            (signupForm.controls['email'].dirty || 
+                            signupForm.controls['email'].touched)">
+                                <div *ngIf="signupForm.controls['email'].errors.email" style="color: red;">
+                                Email format invaid
+                                </div>
+                                <div *ngIf="signupForm.controls['email'].errors.required" style="color: red;">
+                                Email is required
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" formControlName="pwd" id="inputPassword4"
+                                    placeholder="Password *">
+                            </div>
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button type="submit" (click)="signup()" class="btn_4">Signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->

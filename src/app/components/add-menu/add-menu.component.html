@@ -1,0 +1,47 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Add menu</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #menuForm="ngForm" (ngSubmit)="addMenu()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="menu.name"
+                                    [ngModelOptions]="{standalone:true}" placeholder="Name *">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="menu.description"
+                                    [ngModelOptions]="{standalone:true}"  placeholder="Description *">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="menu.price"
+                                    [ngModelOptions]="{standalone:true}"  placeholder="Price *">
+                            </div>
+                            <a class="btn_4" (click)='filePicker.click()'>Select Menu Image</a>
+                            <div class="form-group col-md-6">
+                                <input type="file" style="visibility: hidden;" (change)='onImageSelected($event)'
+                                 #filePicker class="form-control" >
+                            </div>  
+                            <img [src]="imagePreview" *ngIf="imagePreview" width="200px" height="200px" alt="">
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button type="submit" class="btn_4">Add menu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->
